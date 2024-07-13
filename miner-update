@@ -1,4 +1,5 @@
 #!/bin/bash
+# wget https://raw.githubusercontent.com/bu11ettrain/shit_tools/main/miner-update -P /usr/local/bin/ && chmod +x /usr/local/bin/miner-update && miner-update
 
 if [ "$#" -ne "2" ]
   then
