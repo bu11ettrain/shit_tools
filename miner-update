@@ -16,6 +16,7 @@ curl -s -L $miner_url | tar xz -C $miner_dir/$current_version --strip-components
 
 if [ $? -eq 0 ]; then
     echo $miner_name has been updated successfully.
+    miner restart
 else
     echo Oops! Something went wrong. Please try again.
 fi
