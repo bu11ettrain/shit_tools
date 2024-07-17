@@ -1,14 +1,11 @@
 [Unit]
 Description=CaseFan Service
-Requires=systemd-modules-load.target
 After=multi-user.target hive.target
 
 [Service]
 Type=simple
 ExecStart=/home/user/casefan
 SyslogIdentifier=casefan
-KillMode=process
-Restart=always
 
 [Install]
 WantedBy=multi-user.target
