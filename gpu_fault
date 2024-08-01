@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pci_list=()
+data=$(dmesg -T | grep 'NVRM: Xid' | awk -F'[()]' '{print $2}')
+
+if [[ -n $data ]]; then
+        pci_list+=("$data")
+fi
+
+echo "$pci_list" | sort | uniq -c
