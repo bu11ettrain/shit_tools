@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source h-manifest.conf
+source $CUSTOM_CONFIG_FILENAME
+APPNMAE=$CUSTOM_NAME
+APP_PATH=./$APPNMAE
+
+pkill -9 $APPNMAE
+
+#$APP_PATH -p $CUSTOM_URL -w $ACCOUNT >>${CUSTOM_LOG_BASENAME}.log 2>&1
+$APP_PATH -p $CUSTOM_URL -w $ACCOUNT 2>&1 | tee -a "${CUSTOM_LOG_BASENAME}.log"
+echo "$APP_PATH -p $CUSTOM_URL -w $ACCOUNT >> ${CUSTOM_LOG_BASENAME}.log 2>&1"
